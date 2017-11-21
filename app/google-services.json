@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "234943991629",
+    "firebase_url": "https://pando-mobile.firebaseio.com",
+    "project_id": "pando-mobile",
+    "storage_bucket": "pando-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234943991629:android:fc60f9ab17427324",
+        "android_client_info": {
+          "package_name": "com.app.shresta.shrestaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234943991629-ek568271oupft45ar0gmvk2nap4p3rj1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.shresta.shrestaapp",
+            "certificate_hash": "b12c1109eb8026009131916a3544b0e912a0e1dd"
+          }
+        },
+        {
+          "client_id": "234943991629-puubu9j7av7e9ltv5osorcb53bulrftv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-vZ1s1xzscsI_zJdYiiCE58DHLGc6Gdg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234943991629-puubu9j7av7e9ltv5osorcb53bulrftv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

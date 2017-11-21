@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="One Time Password"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/otp_et"
+                android:fontFamily="monospace"
+                android:layout_marginTop="40dp"
+                android:hint="Password"
+                android:background="@drawable/edittext_login1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_backround"
+                android:text="Submit"
+                android:layout_marginTop="50dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:id="@+id/otp_submit_btn"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend?"
+                android:id="@+id/resend_tv"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_gravity="right"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

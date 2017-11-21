@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/login_layout"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="40dp"
+                android:textColor="#000"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/mobilenumber_et"
+                android:textColorHint="#949494"
+                android:hint="Mobile Number"
+                android:fontFamily="monospace"
+                android:inputType="number"
+                android:singleLine="true"
+                android:background="@drawable/edittext_login1"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/password_et"
+                android:inputType="textPassword"
+                android:textColorHint="#949494"
+                android:hint="Password"
+                android:fontFamily="monospace"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_login1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_backround"
+                android:text="Login"
+                android:layout_marginTop="50dp"
+                android:textColor="#FFF"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:id="@+id/login_btn"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/register"
+                android:text="Register!"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--      OTP LAYOUT      -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/otp_layout"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="One Time Password"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textColor="#000"
+                android:inputType="number"
+                android:singleLine="true"
+                android:gravity="center"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/otp_et"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginTop="40dp"
+                android:singleLine="true"
+                android:hint="Password"
+                android:inputType="number"
+                android:textColorHint="#949494"
+                android:background="@drawable/edittext_login1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_backround"
+                android:text="Submit"
+                android:fontFamily="sans-serif-smallcaps"
+                android:layout_marginTop="50dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:id="@+id/otp_submit_btn"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend?"
+                android:fontFamily="sans-serif-smallcaps"
+                android:id="@+id/resend_tv"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
