@@ -3,16 +3,21 @@ package com.app.shresta.shrestaapp.activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,17 +60,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     LinearLayout LoginLayout,OtpLayout;
 
     EditText Otp;
-    TextView resend;
+    TextView resend,login_text;
     Button Submit;
     String OtpStr;
     ProgressDialog progressDialog;
     private static final String TAG = "PhoneAuthActivity";
 
+    // Font path
+    String Ubuntubold = "font/Ubuntubold.ttf";
+    String UbuntuR = "font/UbuntuR.ttf";
+    String UbuntuC = "font/UbuntuC.ttf";
+    String Electrofied = "font/Electrofied.ttf";
+
+    // Choose an arbitrary request code value
+    private static final int RC_SIGN_IN = 123;
+    private TextInputLayout inputLayoutMobileNumber,inputLayoutPassword;
+    ImageView Logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //code that displays the content in full screen mode
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        setContentView(R.layout.login_activity);
+        inputLayoutMobileNumber = (TextInputLayout) findViewById(R.id.input_layout_name);
+        inputLayoutPassword=(TextInputLayout) findViewById(R.id.input_layout_name);
+        login_text=(TextView)findViewById(R.id.login_text);
         LoginLayout=(LinearLayout)findViewById(R.id.login_layout);
         MobileNumber=(EditText)findViewById(R.id.mobilenumber_et);
         Password=(EditText)findViewById(R.id.password_et);
@@ -76,6 +99,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Otp=(EditText)findViewById(R.id.otp_et);
         Submit=(Button)findViewById(R.id.otp_submit_btn);
         resend=(TextView)findViewById(R.id.resend_tv);
+
+        // Loading Font Face
+        Typeface Ubuntubold1 = Typeface.createFromAsset(getAssets(), Ubuntubold);
+        Typeface UbuntuC1 = Typeface.createFromAsset(getAssets(), UbuntuC);
+        Typeface UbuntuR1 = Typeface.createFromAsset(getAssets(), UbuntuR);
+
+        // Applying font
+        login_text.setTypeface(Ubuntubold1);
+        inputLayoutMobileNumber.setTypeface(UbuntuR1);
+        inputLayoutPassword.setTypeface(UbuntuR1);
+        MobileNumber.setTypeface(UbuntuR1);
+        Password.setTypeface(UbuntuR1);
+        Register.setTypeface(UbuntuR1);
+        Login.setTypeface(Ubuntubold1);
+        Otp.setTypeface(UbuntuR1);
+        resend.setTypeface(Ubuntubold1);
+        Submit.setTypeface(Ubuntubold1);
 
         dbHandler=new DatabaseHandler(LoginActivity.this);
         Login.setOnClickListener(this);
@@ -121,7 +161,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithCredential:success");
-                            Toast.makeText(LoginActivity.this, "signInWithCredential:success", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(LoginActivity.this, "signInWithCredential:success", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = task.getResult().getUser();
                             startActivity(new Intent(LoginActivity.this, DashBoardActivity.class));
                             finish();
@@ -143,13 +183,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 TimeUnit.SECONDS,   // Unit of timeout
                 this,               // Activity (for callback binding)
                 mCallbacks);        // OnVerificationStateChangedCallbacks
-            Toast.makeText(LoginActivity.this, "startPhoneNumberVerification", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(LoginActivity.this, "startPhoneNumberVerification", Toast.LENGTH_SHORT).show();
     }
 
     private void verifyPhoneNumberWithCode(String verificationId, String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         System.out.println("************************************");
-        Toast.makeText(LoginActivity.this, "verifyPhoneNumberWithCode", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(LoginActivity.this, "verifyPhoneNumberWithCode", Toast.LENGTH_SHORT).show();
         signInWithPhoneAuthCredential(credential);
     }
 
@@ -162,7 +202,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 this,               // Activity (for callback binding)
                 mCallbacks,         // OnVerificationStateChangedCallbacks
                 token);             // ForceResendingToken from callbacks
-        Toast.makeText(LoginActivity.this, "resendVerificationCode", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(LoginActivity.this, "resendVerificationCode", Toast.LENGTH_SHORT).show();
     }
 
     private boolean validatePhoneNumber() {
@@ -213,9 +253,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (!isNetworkAvailable()) {
                             Toast.makeText(this, "Internet Connection is not available", Toast.LENGTH_SHORT).show();
                         } else{
-                        LoginLayout.setVisibility(View.GONE);
+                       /* LoginLayout.setVisibility(View.GONE);
                             OtpLayout.setVisibility(View.VISIBLE);
                             startPhoneNumberVerification(LoginActivity.mobilenumber_forotp);
+            */
+                       Intent intent=new Intent(LoginActivity.this,DashBoardActivity.class);
+                        startActivity(intent);
                         }
                     }
                     else{
