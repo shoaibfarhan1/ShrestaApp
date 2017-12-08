@@ -41,7 +41,7 @@ public class FourDigitActivity extends AppCompatActivity {
         disclaimer_content=(TextView)findViewById(R.id.disclaimer_content);
 
 
-        
+
         // Loading Font Face
         Typeface Ubuntubold1 = Typeface.createFromAsset(getAssets(), Ubuntubold);
         Typeface UbuntuC1 = Typeface.createFromAsset(getAssets(), UbuntuC);
