@@ -20,14 +20,16 @@
             android:weightSum="3">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Key"
+                android:text="Keys"
+                android:textSize="20dp"
+                android:id="@+id/keystext"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
-            <TextView
+           <!-- <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -42,17 +44,20 @@
                 android:text="Action"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/colorPrimaryDark"/>-->
 
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
+            android:layout_height="match_parent">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:divider="@color/colorPrimary"
+            android:dividerHeight="0.5dp"
+            android:background="@drawable/listview_background"
             android:id="@+id/key_listview">
 
         </ListView>

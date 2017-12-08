@@ -6,21 +6,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:weightSum="3"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/key_tv"
             android:gravity="left"
+            android:paddingLeft="15dp"
+            android:textSize="17dp"
             android:layout_marginLeft="10dp"
-            android:textColor="#000"
-            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_weight="2.5"
             android:text=""/>
-        <TextView
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete"
+            android:src="@drawable/delete"
+            android:layout_weight="0.5" />-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rightarrow"
+            android:layout_weight="0.5"
+            android:paddingRight="15dp"/>
+     <!--   <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/keyvalue_tv"
@@ -36,7 +51,7 @@
             android:textColor="#000"
             android:gravity="center"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""/>-->
 
     </LinearLayout>
 

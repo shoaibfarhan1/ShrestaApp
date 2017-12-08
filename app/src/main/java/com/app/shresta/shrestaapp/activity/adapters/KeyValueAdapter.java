@@ -2,10 +2,12 @@ package com.app.shresta.shrestaapp.activity.adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.shresta.shrestaapp.R;
@@ -26,6 +28,9 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
     public Resources res;
     KeyValuesModel tempValues=null;
     int i=0;
+    String Ubuntubold = "font/Ubuntubold.ttf";
+    String UbuntuR = "font/UbuntuR.ttf";
+    String UbuntuC = "font/UbuntuC.ttf";
 
     /*************  CustomAdapter Constructor *****************/
     public KeyValueAdapter(Context c, ArrayList d) {
@@ -66,6 +71,7 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
 
         public TextView key_TV;
         public TextView keyvalue_TV;
+        public ImageView Delete;
 
     }
 
@@ -83,7 +89,8 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
             /******** View Holder Object to contain tabitem.xml file elements ************/
             holder=new ViewHolder();
             holder.key_TV=(TextView)vi.findViewById(R.id.key_tv);
-            holder.keyvalue_TV=(TextView)vi.findViewById(R.id.keyvalue_tv);
+           // holder.Delete=(ImageView)vi.findViewById(R.id.delete);
+            //holder.keyvalue_TV=(TextView)vi.findViewById(R.id.keyvalue_tv);
             vi.setTag(holder);
         }
         else
@@ -99,18 +106,20 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
             /***** Get each Model object from Arraylist ********/
             tempValues=null;
             tempValues = (KeyValuesModel) data.get(position);
-
+            // Loading Font Face
+            Typeface Ubuntubold1 = Typeface.createFromAsset(context.getAssets(), Ubuntubold);
+            Typeface UbuntuC1 = Typeface.createFromAsset(context.getAssets(), UbuntuC);
+            Typeface UbuntuR1 = Typeface.createFromAsset(context.getAssets(), UbuntuR);
+            // Applying font
+            holder.key_TV.setTypeface(UbuntuR1);
+            //KeyValueET.setTypeface(UbuntuR1);
             /************  Set Model values in Holder elements ***********/
-            holder.key_TV.setText("key : "+tempValues.getKey());
-            holder.keyvalue_TV.setText("keyvalue : "+tempValues.getKeyValue());
+            holder.key_TV.setText(tempValues.getKey());
+           // holder.keyvalue_TV.setText("keyvalue : "+tempValues.getKeyValue());
 
             String keyStr=tempValues.getKey().toString();
             String keyvalueStr=tempValues.getKeyValue().toString();
 
-            //  Intent intent=new Intent(PatientAdapter.this,PatientDetails.class);
-
-            /******** Set Item Click Listner for LayoutInflater for each row ***********/
-            // vi.setOnClickListener(new OnItemClickListener(position));
         }
         return vi;
     }

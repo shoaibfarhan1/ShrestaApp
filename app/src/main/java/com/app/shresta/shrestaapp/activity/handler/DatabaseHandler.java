@@ -122,12 +122,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
                 String keyVaueStr=cursor.getString(2);
                 System.out.println("===Database handler keyValueStr : " + keyVaueStr);
-                try{
+               /* try{
                     DecryptedKeyValueStr = AESHelper.decrypt("AES Algo", keyVaueStr);
                     Log.i("DecryptedKeyValueStry: ", DecryptedKeyValueStr);
                 }catch (Exception e){
                     e.printStackTrace();
-                }
+                }*/
                 keyValues.add(cursor.getString(0) + "***" + cursor.getString(1) + "***" +keyVaueStr);
             } while (cursor.moveToNext());
         }
@@ -136,4 +136,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
         return keyValues;
     }
+
+    public void update_keyList(int keyid,String key,String keyvalue){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_ID, keyid);
+        values.put(KEY, key);
+        values.put(KEY_VALUE, keyvalue);
+
+        db.update(TABLE_ADD_KEYVALUES, values, KEY_ID+"=" + keyid, null);
+    }
+
+    public void delete_key(int keyid,String key,String keyvalue){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_ID, keyid);
+        values.put(KEY, key);
+        values.put(KEY_VALUE, keyvalue);
+
+        db.delete(TABLE_ADD_KEYVALUES, KEY_ID+"="+keyid, null);
+    }
+
 }

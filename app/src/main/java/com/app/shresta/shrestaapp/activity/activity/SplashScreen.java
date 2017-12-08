@@ -1,4 +1,4 @@
-package com.app.shresta.shrestaapp.activity;
+package com.app.shresta.shrestaapp.activity.activity;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -18,8 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.shresta.shrestaapp.R;
-
-import org.w3c.dom.Text;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)

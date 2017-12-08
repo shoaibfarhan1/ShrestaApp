@@ -1,17 +1,14 @@
-package com.app.shresta.shrestaapp.activity;
+package com.app.shresta.shrestaapp.activity.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.app.shresta.shrestaapp.R;
 
@@ -81,7 +78,7 @@ public class SplashScreenActivity extends Activity {
             public void onAnimationEnd(Animation animation) {
                 imageView.startAnimation(animation_3);
                 finish();
-                Intent i = new Intent(getBaseContext(),LoginActivity.class);
+                Intent i = new Intent(getBaseContext(),TermsAndConditions.class);
                 startActivity(i);
             }
             @Override
@@ -120,7 +117,7 @@ public class SplashScreenActivity extends Activity {
                 } finally {
                     finish();
                     startActivity(new Intent(SplashScreenActivity.this,
-                            LoginActivity.class));
+                            TermsAndConditions.class));
 
                 }
             }

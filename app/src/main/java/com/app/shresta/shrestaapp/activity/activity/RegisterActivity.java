@@ -1,4 +1,4 @@
-package com.app.shresta.shrestaapp.activity;
+package com.app.shresta.shrestaapp.activity.activity;
 
 import android.content.Intent;
 
