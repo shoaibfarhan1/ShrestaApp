@@ -207,6 +207,7 @@ public class DashBoardActivity extends AppCompatActivity {
             c.moveToNext();
         showRecords();
     }
+    
     public void showRecords(){
         try {
             key = c.getString(1);
