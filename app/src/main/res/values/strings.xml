@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">ShrestaApp</string>
+    <string name="app_name">Secured Notes</string>
+
+    <string name="SignUp"><u><b>Sign Up</b></u></string>
+
+    <string name="html">
+        <h1>Duplicate text removal is only between content on new lines and duplicate text with
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted.
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+        Duplicate text removal is only between content on new lines and duplicate text within t
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted.</h1>
+
+
+    </string>
+
 </resources>

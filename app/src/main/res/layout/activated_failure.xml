@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/activation_header"
+            android:text="Activation"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/signupet_backround"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Failed to "
+                android:id="@+id/failedto"
+                android:textSize="35dp"
+                android:gravity="center"
+                android:textColor="#F44336"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Validate OTP"
+                android:id="@+id/validateotp"
+                android:textSize="35dp"
+                android:gravity="center"
+                android:textColor="#F44336"/>
+
+        </LinearLayout>
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:id="@+id/resendotp"
+            android:background="@drawable/proceed_backround"
+            android:text="Resend OTP"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF">
+    android:background="@drawable/app_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +21,12 @@
                 android:layout_height="0dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_weight="0.8">
+                android:layout_weight="0.6">
 
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/shrestaiconlogo"/>
+                    android:src="@drawable/iconsh"/>
 
            <!--     <TextView
                     android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:layout_height="0dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_weight="0.8">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -54,33 +54,49 @@
                     android:gravity="center">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:text=""
+                        android:hint=""
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:background="@drawable/signupet_backround"
                         android:inputType="number"
                         android:id="@+id/digit_one"
+                        android:nextFocusRight="@+id/digit_two"
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"/>
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:text=""
+                        android:maxLength="1"
+                        android:layout_marginLeft="8dp"
+                        android:nextFocusRight="@+id/digit_three"
+                        android:background="@drawable/signupet_backround"
                         android:inputType="number"
                         android:id="@+id/digit_two"
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"/>
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:text=""
+                        android:maxLength="1"
+                        android:layout_marginLeft="8dp"
+                        android:nextFocusRight="@+id/digit_four"
+                        android:background="@drawable/signupet_backround"
                         android:inputType="number"
                         android:id="@+id/digit_three"
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"/>
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:text=""
+                        android:maxLength="1"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/signupet_backround"
                         android:inputType="number"
                         android:id="@+id/digit_four"
                         android:gravity="center"
@@ -94,6 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="5dp"
                     android:id="@+id/fourdigitPIN"
                     android:paddingRight="50dp"
                     android:paddingLeft="50dp"
@@ -101,40 +118,54 @@
                     android:textColor="#000"
                     android:text="Enter 4-digit PIN"/>
 
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/proceed_backround"
+                    android:id="@+id/signin"
+                    android:text="Sign In"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FFF"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/dnthaveText"
                     android:text="Don't have an account?"
-                    android:layout_marginTop="20dp"
                     android:textColor="#000"/>
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:id="@+id/sign_up_TV"
-                        android:layout_marginTop="20dp"
                         android:paddingLeft="5dp"
                         android:textColor="@color/colorPrimary"
-                        android:text="Sign Up"/>
+                        android:text="@string/SignUp"/>
                 </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="vertical"
-                android:gravity="top"
                 android:layout_weight="1.4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="top">
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -143,21 +174,28 @@
                     android:id="@+id/disclaimer"
                     android:textColor="#000"
                     android:textStyle="bold"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginLeft="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
                     android:textColor="#000"
                     android:id="@+id/disclaimer_content"
-                    android:text="Duplicate text removal is only between content on new lines and duplicate text within the same line will not be removed.
+                    android:text="Duplicate text removal is only between content on new lines and duplicate text with
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted.
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+        Duplicate text removal is only between content on new lines and duplicate text within t
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
+The line order/sorting will not be affected other than subsequent duplicate lines being deleted
 The line order/sorting will not be affected other than subsequent duplicate lines being deleted." />
 
 
             </LinearLayout>
-
+            </ScrollView>
         </LinearLayout></LinearLayout>
 </LinearLayout>

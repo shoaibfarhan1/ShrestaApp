@@ -13,6 +13,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class AESHelper {
 
+    private static String seed;
+
     public static String encrypt(String seed, String cleartext) throws Exception {
         byte[] rawKey = getRawKey(seed.getBytes());
         byte[] result = encrypt(rawKey, cleartext.getBytes());
@@ -46,11 +48,12 @@ public class AESHelper {
     }
 
     private static byte[] decrypt(byte[] raw, byte[] encrypted) throws Exception {
-        SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE, skeySpec);
-        byte[] decrypted = cipher.doFinal(encrypted);
-        return decrypted;
+
+            SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+            byte[] decrypted = cipher.doFinal(encrypted);
+            return decrypted;
     }
 
     public static String toHex(String txt) {

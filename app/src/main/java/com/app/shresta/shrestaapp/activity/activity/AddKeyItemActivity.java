@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,6 +15,10 @@ import android.widget.Toast;
 import com.app.shresta.shrestaapp.R;
 import com.app.shresta.shrestaapp.activity.aesalgorithm.AESHelper;
 import com.app.shresta.shrestaapp.activity.handler.DatabaseHandler;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by shoaib.farhan on 26-11-2017.
@@ -29,6 +35,9 @@ public class AddKeyItemActivity extends AppCompatActivity implements View.OnClic
     String Ubuntubold = "font/Ubuntubold.ttf";
     String UbuntuR = "font/UbuntuR.ttf";
     String UbuntuC = "font/UbuntuC.ttf";
+    String Verdana = "font/verdana.ttf";
+    String VerdanaB = "font/verdanab.ttf";
+
     String EncryptedKeyStr,EncryptedKeyValueStr,DecryptedKeyStr,DecryptedKeyValueStr;
     String keyname,keyvalue,keyid;
 
@@ -36,6 +45,11 @@ public class AddKeyItemActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //code that displays the content in full screen mode
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.addkeyvalues);
         dbHandler=new DatabaseHandler(AddKeyItemActivity.this);
 
@@ -70,10 +84,13 @@ public class AddKeyItemActivity extends AppCompatActivity implements View.OnClic
         Typeface Ubuntubold1 = Typeface.createFromAsset(getAssets(), Ubuntubold);
         Typeface UbuntuC1 = Typeface.createFromAsset(getAssets(), UbuntuC);
         Typeface UbuntuR1 = Typeface.createFromAsset(getAssets(), UbuntuR);
+        Typeface Verdana1 = Typeface.createFromAsset(getAssets(), Verdana);
+        Typeface VerdanaB1 = Typeface.createFromAsset(getAssets(), VerdanaB);
         // Applying font
-        KeyET.setTypeface(UbuntuR1);
-        KeyValueET.setTypeface(UbuntuR1);
-        AddBtn.setTypeface(Ubuntubold1);
+        KeyET.setTypeface(Verdana1);
+        KeyValueET.setTypeface(Verdana1);
+        AddBtn.setTypeface(Verdana1);
+        SaveBtn.setTypeface(Verdana1);
 
         AddBtn.setOnClickListener(this);
         SaveBtn.setOnClickListener(this);
@@ -113,7 +130,7 @@ public class AddKeyItemActivity extends AppCompatActivity implements View.OnClic
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            try {
+           try {
                 EncryptedKeyValueStr = AESHelper.encrypt("AES Algo", KeyValueStr);
                 DecryptedKeyValueStr = AESHelper.decrypt("AES Algo", EncryptedKeyValueStr);
                 System.out.println("Normal Text ::"+KeyStr +" \n Encrypted key Value :: "+EncryptedKeyValueStr +" \n Decrypted key value :: "+ DecryptedKeyValueStr);
@@ -122,7 +139,12 @@ public class AddKeyItemActivity extends AppCompatActivity implements View.OnClic
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            dbHandler.addKeyValues(KeyStr, KeyValueStr);
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = new Date();
+            System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
+
+            String CreatedAt=String.valueOf(dateFormat.format(date));
+            dbHandler.addKeyValues(KeyStr, KeyValueStr, CreatedAt, CreatedAt);
             Toast.makeText(AddKeyItemActivity.this, "Successfully added", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(AddKeyItemActivity.this,DashBoardActivity.class);
             startActivity(intent);

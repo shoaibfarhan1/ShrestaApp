@@ -2,26 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF">
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/app_background"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp" >
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:weightSum="3"
         android:orientation="horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/key_tv"
-            android:gravity="left"
-            android:paddingLeft="15dp"
-            android:textSize="17dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/colorPrimaryDark"
             android:layout_weight="2.5"
-            android:text=""/>
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/key_tv"
+                android:gravity="left"
+                android:paddingTop="10dp"
+                android:singleLine="true"
+                android:ems="1"
+                android:paddingLeft="15dp"
+                android:textColor="#000"
+                android:text=""/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createdat"
+                android:paddingLeft="15dp"
+                android:textColor="#000"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:textColor="#000"
+                android:id="@+id/updatedat"
+               />
+
+
+        </LinearLayout>
+
+
         <!--<ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,5 +91,5 @@
             android:text=""/>-->
 
     </LinearLayout>
-
+    </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -31,6 +31,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ID = "keyid";
     private static final String KEY = "key";
     private static final String KEY_VALUE = "key_value";
+    private static final String KEY_CREATEDAT = "key_createdat";
+    private static final String KEY_LASTUPDATEAT = "key_lastupdateat";
 
     String DecryptedKeyValueStr;
 
@@ -47,7 +49,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 USER_PASSWORD + " TEXT)";
 
         String CREATE_KEY_VALUES_TABLE = "CREATE TABLE " + TABLE_ADD_KEYVALUES + "("
-                + KEY_ID + " INTEGER PRIMARY KEY,"  + KEY + " TEXT," + KEY_VALUE + " TEXT)";
+                + KEY_ID + " INTEGER PRIMARY KEY,"  + KEY + " TEXT," + KEY_VALUE + " TEXT," + KEY_CREATEDAT + " TEXT," + KEY_LASTUPDATEAT + " TEXT)";
 
         db.execSQL(CREATE_USER_REG_TABLE);
         db.execSQL(CREATE_KEY_VALUES_TABLE);
@@ -80,17 +82,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public List<String> docLogin(String mobile_number) {
+    public List<String> docLogin(String password) {
 
         List<String> docs = new ArrayList<String>();
-        String selectQuery = "SELECT * FROM " + TABLE_USER_REG + " WHERE mobile_number =" + mobile_number ;
+        String selectQuery = "SELECT * FROM " + TABLE_USER_REG + " WHERE password =" + password ;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
 
-                docs.add(cursor.getString(1));
-                System.out.println("cursor.getString(1) : "  + cursor.getString(1));
+                docs.add(cursor.getString(3));
+                System.out.println("cursor.getString(3) : "  + cursor.getString(3));
             } while (cursor.moveToNext());
         }
         // closing connection
@@ -99,13 +101,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return docs;
     }
 
-    public void addKeyValues(String key, String key_value){
+    public void addKeyValues(String key, String key_value,String key_createdat,String key_lastupdatedat){
         System.out.println("key==  ; " + key);
         System.out.println("key value == ; " + key_value);
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY, key);
         values.put(KEY_VALUE, key_value);
+        values.put(KEY_CREATEDAT, key_createdat);
+        values.put(KEY_LASTUPDATEAT, key_lastupdatedat);
 
         // Inserting Row
         db.insert(TABLE_ADD_KEYVALUES, null, values);
@@ -122,13 +126,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
                 String keyVaueStr=cursor.getString(2);
                 System.out.println("===Database handler keyValueStr : " + keyVaueStr);
+                String keycreatedat=cursor.getString(3);
+                System.out.println("===Database handler keycreatedat : " + keycreatedat);
+                String keyupdatedat=cursor.getString(4);
+                System.out.println("===Database handler keyupdatedat : " + keyupdatedat);
                /* try{
                     DecryptedKeyValueStr = AESHelper.decrypt("AES Algo", keyVaueStr);
                     Log.i("DecryptedKeyValueStry: ", DecryptedKeyValueStr);
                 }catch (Exception e){
                     e.printStackTrace();
                 }*/
-                keyValues.add(cursor.getString(0) + "***" + cursor.getString(1) + "***" +keyVaueStr);
+                keyValues.add(cursor.getString(0) + "***" + cursor.getString(1) + "***" +keyVaueStr + "***" + keycreatedat +  "***" + keyupdatedat);
             } while (cursor.moveToNext());
         }
         // closing connection

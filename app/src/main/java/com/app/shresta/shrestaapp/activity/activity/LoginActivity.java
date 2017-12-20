@@ -242,9 +242,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String mobilenumber=MobileNumber.getText().toString();
                 String password=Password.getText().toString();
                 mobilenumber_forotp="+91"+mobilenumber;
-                if(mobilenumber.equals("")){
+             /*   if(mobilenumber.equals("")){
                     Toast.makeText(LoginActivity.this, "Mobile Number Required", Toast.LENGTH_SHORT).show();
-                }else if(password.equals("")){
+                }else */if(password.equals("")){
                     Toast.makeText(LoginActivity.this, "Password Required", Toast.LENGTH_SHORT).show();
             }else{
                     UserList=dbHandler.docLogin(mobilenumber);

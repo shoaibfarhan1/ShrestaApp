@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/shrestaiconlogo"
+        android:icon="@mipmap/shrestalogo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:fullBackupContent="true"
@@ -23,6 +23,15 @@
         </activity>
 
         <activity android:name=".activity.activity.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".activity.activity.ActivatedSuccess"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".activity.activity.ActivationFailure"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".activity.activity.ValidateOTPActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity android:name=".activity.activity.TermsAndConditions"
@@ -45,8 +54,7 @@
             android:label="DashBoard"/>
 
         <activity android:name=".activity.activity.AddKeyItemActivity"
-            android:parentActivityName=".activity.activity.DashBoardActivity"
-            android:label="Add Key Item"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
     </application>
 </manifest>

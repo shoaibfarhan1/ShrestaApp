@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#FFF"
+    android:background="@drawable/app_background"
     tools:context=".activity.activity.SplashScreen">
 
    <LinearLayout
@@ -18,7 +18,7 @@
         android:id="@+id/splashIV"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/shrestaiconlogo"/>
+        android:src="@drawable/iconsh"/>
 
       <TextView
           android:layout_width="match_parent"

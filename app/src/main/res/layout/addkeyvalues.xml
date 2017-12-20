@@ -4,13 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF">
+    android:background="@drawable/app_background">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
         android:layout_margin="20dp"
         android:padding="10dp"
         android:gravity="center"
@@ -19,20 +18,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/edittext_login1"
+            android:background="@drawable/signupet_backround"
             android:hint="Key"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="15dp"
+            android:singleLine="true"
+            android:paddingLeft="10dp"
+            android:textColor="#000"
+            android:textColorHint="#808080"
             android:id="@+id/addkey_et"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_login1"
+            android:layout_height="200dp"
+            android:background="@drawable/signupet_backround"
+            android:textSize="15dp"
             android:hint="Key Value"
-            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="10dp"
+            android:gravity="top"
+            android:textColor="#000"
             android:layout_marginTop="15dp"
-            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorHint="#808080"
             android:id="@+id/addkeynumber_et"/>
 
 
@@ -41,26 +46,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:weightSum="2"
+            android:padding="10dp"
             android:paddingTop="35dp"
             android:layout_gravity="bottom">
 
         <Button
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@drawable/button_backround"
+            android:background="@drawable/proceed_backround"
             android:text="Add"
+            android:layout_weight="1"
+            android:textAllCaps="false"
             android:id="@+id/add_btn"
             android:layout_gravity="center"
             android:textColor="#FFF"/>
 
            <Button
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/button_backround"
+                android:background="@drawable/proceed_backround"
                 android:text="Save"
-               android:layout_marginLeft="25dp"
+               android:layout_weight="1"
+                android:textAllCaps="false"
+
                 android:id="@+id/save"
-                android:visibility="visible"
                 android:layout_gravity="center"
                 android:textColor="#FFF"/>
 

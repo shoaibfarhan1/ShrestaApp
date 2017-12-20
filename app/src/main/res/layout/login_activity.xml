@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFF"
+    android:background="@drawable/app_background"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
@@ -85,7 +85,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_backround"
+                android:background="@drawable/proceed_backround"
                 android:text="Login"
                 android:textSize="18dp"
                 android:layout_marginTop="50dp"

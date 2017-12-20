@@ -31,6 +31,8 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
     String Ubuntubold = "font/Ubuntubold.ttf";
     String UbuntuR = "font/UbuntuR.ttf";
     String UbuntuC = "font/UbuntuC.ttf";
+    String Verdana = "font/verdana.ttf";
+    String VerdanaB = "font/verdanab.ttf";
 
     /*************  CustomAdapter Constructor *****************/
     public KeyValueAdapter(Context c, ArrayList d) {
@@ -69,7 +71,7 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
     /********* Create a holder to contain inflated xml file elements ***********/
     public static class ViewHolder{
 
-        public TextView key_TV;
+        public TextView key_TV, Createdat, Updatedat;
         public TextView keyvalue_TV;
         public ImageView Delete;
 
@@ -89,6 +91,8 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
             /******** View Holder Object to contain tabitem.xml file elements ************/
             holder=new ViewHolder();
             holder.key_TV=(TextView)vi.findViewById(R.id.key_tv);
+            holder.Createdat=(TextView)vi.findViewById(R.id.createdat);
+            holder.Updatedat=(TextView)vi.findViewById(R.id.updatedat);
            // holder.Delete=(ImageView)vi.findViewById(R.id.delete);
             //holder.keyvalue_TV=(TextView)vi.findViewById(R.id.keyvalue_tv);
             vi.setTag(holder);
@@ -110,15 +114,22 @@ public class KeyValueAdapter extends BaseAdapter implements View.OnClickListener
             Typeface Ubuntubold1 = Typeface.createFromAsset(context.getAssets(), Ubuntubold);
             Typeface UbuntuC1 = Typeface.createFromAsset(context.getAssets(), UbuntuC);
             Typeface UbuntuR1 = Typeface.createFromAsset(context.getAssets(), UbuntuR);
+            Typeface Verdana1 = Typeface.createFromAsset(context.getAssets(), Verdana);
+            Typeface VerdanaB1 = Typeface.createFromAsset(context.getAssets(), VerdanaB);
             // Applying font
-            holder.key_TV.setTypeface(UbuntuR1);
+            holder.key_TV.setTypeface(VerdanaB1);
+            holder.Createdat.setTypeface(Verdana1);
+            holder.Updatedat.setTypeface(Verdana1);
             //KeyValueET.setTypeface(UbuntuR1);
-            /************  Set Model values in Holder elements ***********/
-            holder.key_TV.setText(tempValues.getKey());
-           // holder.keyvalue_TV.setText("keyvalue : "+tempValues.getKeyValue());
-
             String keyStr=tempValues.getKey().toString();
-            String keyvalueStr=tempValues.getKeyValue().toString();
+            String keycreatedat=tempValues.getKeyCreatedat().toString();
+            String keyupdatedat=tempValues.getKeyUpdatedat().toString();
+//            String keyvalueStr=tempValues.getKeyValue().toString();
+            /************  Set Model values in Holder elements ***********/
+            holder.key_TV.setText(keyStr);
+            holder.Createdat.setText("Created:  "+ keycreatedat);
+            holder.Updatedat.setText("Last Updated: "+ keyupdatedat);
+           // holder.keyvalue_TV.setText("keyvalue : "+tempValues.getKeyValue());
 
         }
         return vi;

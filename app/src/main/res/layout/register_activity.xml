@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#FFF"
+    android:background="@drawable/app_background"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
@@ -10,7 +10,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:id="@+id/resister_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration"
+            android:id="@+id/registration_text"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,7 +36,7 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content">
 
-        <TextView
+       <!-- <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/registration_text"
@@ -27,13 +45,12 @@
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"/>-->
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:layout_margin="20dp"
             android:padding="10dp"
             android:layout_gravity="center">
@@ -43,10 +60,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textColor="#000"
+                android:paddingLeft="10dp"
                 android:textSize="15dp"
                 android:layout_marginTop="10dp"
                 android:textColorHint="#949494"
-                android:background="@drawable/edittext_login1"
+                android:background="@drawable/signupet_backround"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="10dp"
                 android:hint="Full Name"
@@ -60,8 +78,9 @@
                 android:textColor="#000"
                 android:layout_marginTop="10dp"
                 android:textSize="15dp"
+                android:paddingLeft="10dp"
                 android:textColorHint="#949494"
-                android:background="@drawable/edittext_login1"
+                android:background="@drawable/signupet_backround"
                 android:layout_gravity="center_vertical"
                 android:drawableLeft="@drawable/edittext_login1"
                 android:inputType="number"
@@ -76,9 +95,10 @@
                 android:inputType="textEmailAddress"
                 android:textColor="#000"
                 android:textSize="15dp"
+                android:paddingLeft="10dp"
                 android:textColorHint="#949494"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edittext_login1"
+                android:background="@drawable/signupet_backround"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="10dp"
                 android:hint="Email"
@@ -92,9 +112,10 @@
                 android:inputType="textEmailAddress"
                 android:textColor="#000"
                 android:textColorHint="#949494"
+                android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:textSize="15dp"
-                android:background="@drawable/edittext_login1"
+                android:background="@drawable/signupet_backround"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="10dp"
                 android:hint="User Name"
@@ -109,8 +130,10 @@
                 android:textColor="#000"
                 android:textColorHint="#949494"
                 android:inputType="textPassword"
+                android:paddingLeft="10dp"
                 android:textSize="15dp"
-                android:background="@drawable/edittext_login1"
+                android:maxLength="4"
+                android:background="@drawable/signupet_backround"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="10dp"
                 android:lines="2"
@@ -120,11 +143,12 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_backround"
+            android:layout_height="40dp"
+            android:background="@drawable/proceed_backround"
             android:text="Register"
             android:textSize="16dp"
             android:layout_marginTop="20dp"
+            android:textAllCaps="false"
             android:textColor="#FFF"
             android:textStyle="bold"
             android:id="@+id/registration_btn"
@@ -134,4 +158,115 @@
         </LinearLayout>
     </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/activation_Layout"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activation"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#000"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/signupet_backround">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="A One Time Password has been sent to Your rigister mobile number."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Relax, We will automatically validate the OTP"
+                android:textStyle="bold"
+                android:paddingTop="15dp"/>
+
+            <!--android:text="Please enter the OTP below to verify and active your account."
+          -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:gravity="center">
+
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/first_digit"
+                    android:inputType="number"/>
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/second_digit"
+                    android:inputType="number"/>
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/third_digit"
+                    android:inputType="number"/>
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fourth_digit"
+                    android:inputType="number"/>
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fifth_digit"
+                    android:inputType="number"/>
+                <EditText
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sixth_digit"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:id="@+id/validate_otp_btn"
+                android:background="@drawable/proceed_backround"
+                android:text="Validate OTP"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 </LinearLayout>

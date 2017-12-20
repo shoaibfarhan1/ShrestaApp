@@ -28,7 +28,7 @@
                 android:id="@+id/keystext"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="#000"/>
            <!-- <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,35 +51,44 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:divider="@color/colorPrimary"
-            android:dividerHeight="0.5dp"
-            android:background="@drawable/listview_background"
-            android:id="@+id/key_listview">
 
-        </ListView>
+           <!-- <ListView
+                android:id="@+id/key_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/signupet_backround"
+                android:divider="#808080"
+                android:paddingBottom="20dp"
+                android:dividerHeight="0.5dp">
+
+            </ListView>-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/key_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"/>
 
             <TextView
+                android:id="@+id/nodatafound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/nodatafound"
+                android:layout_margin="15dp"
+                android:gravity="center"
                 android:text="No Data Found"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:gravity="center"
-                android:layout_margin="15dp"
-                android:visibility="gone"/>
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/add_key_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="20dp"
-            app:srcCompat="@android:drawable/ic_input_add" />
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_key_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="25dp"
+                app:srcCompat="@android:drawable/ic_input_add" />
 
         </FrameLayout>
        <!-- <TextView
